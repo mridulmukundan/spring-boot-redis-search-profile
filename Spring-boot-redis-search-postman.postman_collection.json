@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "c050cf82-3f07-4047-bd93-0e44b1751821",
+		"name": "Spring-boot-redis-search-postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add-profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test7\",\r\n    \"userId\":\"7\",\r\n    \"associateId\": \"CTS12310\",\r\n    \"email\": \"test@test.com\",\r\n    \"mobile\": 1234567890,\r\n    \"skills\":[{\r\n        \"name\": \"HTML\",\r\n        \"expertise\": 5\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/skill-tracker/api/v1/engineer/add-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"skill-tracker",
+						"api",
+						"v1",
+						"engineer",
+						"add-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search-profile-paginated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/skill-tracker/api/v1/admin/NAME/test?pageNo=1&pageSize=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"skill-tracker",
+						"api",
+						"v1",
+						"admin",
+						"NAME",
+						"test"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test7\",\r\n    \"userId\":\"7\",\r\n    \"associateId\": \"CTS12310\",\r\n    \"email\": \"test@test.com\",\r\n    \"mobile\": 1234567890,\r\n    \"skills\":[{\r\n        \"name\": \"HTML\",\r\n        \"expertise\": 1\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/skill-tracker/api/v1/engineer/update-profile/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"skill-tracker",
+						"api",
+						"v1",
+						"engineer",
+						"update-profile",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
